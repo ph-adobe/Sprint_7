@@ -1,10 +1,13 @@
-Sprint_7
+*Sprint_7*
 
-Файл содержит тесты API для проекта https://qa-scooter.praktikum-services.ru/ согласно документации https://qa-scooter.praktikum-services.ru/docs/
+Репозиторий содержит тесты API для [проекта](https://qa-scooter.praktikum-services.ru/) согласно [документации](https://qa-scooter.praktikum-services.ru/docs/)
 
 Для запуска тестов необходимо:
-1. Установить зависимости 
+1. Установить зависимости
+```
 pip install -r requirements.txt
-
-2. Выполнить команду 
+```
+2. Выполнить команду
+```
 pytest -v
+```
