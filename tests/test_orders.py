@@ -1,6 +1,6 @@
 import allure
 import pytest
-from test_data import TestOrderData as Tod
+from data_for_tests import GeneratedOrderData as Od
 from ya_scooter_api_usage import OrderApiUsage
 
 order = OrderApiUsage()
@@ -11,7 +11,7 @@ class TestMakeOrder:
     @allure.title("Test make order - positive")
     @pytest.mark.parametrize(
         "order_data",
-        [Tod.order_full_data_one_color, Tod.order_full_data_both_colors, Tod.order_full_data_wo_colors]
+        [Od.order_full_data_one_color, Od.order_full_data_both_colors, Od.order_full_data_wo_colors]
     )
     def test_make_order(self, order_data):
         status_code, response = order.make_order(order_data)
@@ -31,11 +31,11 @@ class TestOrderList:
     @pytest.mark.parametrize(
         "params",
         [
-            Tod.get_orders_with_all_params,
-            Tod.get_orders_with_courier_id,
-            Tod.get_orders_with_station,
-            Tod.get_orders_with_limit,
-            Tod.get_orders_with_page
+            Od.get_orders_with_all_params,
+            Od.get_orders_with_courier_id,
+            Od.get_orders_with_station,
+            Od.get_orders_with_limit,
+            Od.get_orders_with_page
         ]
     )
     def test_get_orders_with_params(self, params):

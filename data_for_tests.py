@@ -3,7 +3,7 @@ from datetime import date, timedelta
 from faker import Faker
 
 
-class TestCourierData:
+class GeneratedCourierData:
     fake = Faker()
     login = fake.user_name()
     password = fake.password()
@@ -16,7 +16,7 @@ class TestCourierData:
     registration_data_wo_password = Gd.generate_courier_data(login, None, first_name)
 
 
-class TestOrderData:
+class GeneratedOrderData:
     fake = Faker("ru_RU")
 
     # Data for making an order
@@ -51,3 +51,11 @@ class TestOrderData:
     get_orders_with_station = [None, station, None, None]
     get_orders_with_limit = [None, None, limit, None]
     get_orders_with_page = [None, None, None, page]
+
+
+class ExpectedResponses:
+    expected_response_201 = {"ok": True}
+    message_incomplete_registration_data = "Недостаточно данных для создания учетной записи"
+    message_existing_login = "Этот логин уже используется. Попробуйте другой."
+    message_incomplete_login_data = "Недостаточно данных для входа"
+    message_account_not_found = "Учетная запись не найдена"
